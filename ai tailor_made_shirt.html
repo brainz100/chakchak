@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이즈 추천</title>
+    <link rel="stylesheet" href="ai tailor_made_shirt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>맞춤셔츠 사이즈 추천</h1>
+        <form id="sizeForm">
+            <label for="name">이름:</label>
+            <input type="text" id="name" required>
+
+            <label for="height">키 (cm):</label>
+            <input type="number" id="height" required>
+            
+            <label for="weight">몸무게 (kg):</label>
+            <input type="number" id="weight" required>
+            
+            <button type="submit">사이즈 추천받기</button>
+        </form>
+        
+        <div id="results" style="display: none;">
+            <div class="result-section">
+                <h2>맞춤셔츠 사이즈 추천</h2>
+                <div id="customSize" class="size-recommendation">
+                    <h3>CHAKCHAK GUYS</h3>
+                    <p id="customerName"></p>
+                    <div class="size-grid">
+                        <div class="size-item">
+                            <h4>목둘레</h4>
+                            <p id="neckSize"></p>
+                            <small>셔츠를 펼쳐 단추매듭이 있는 부분에서부터 단춧구멍의 중간 부분까지의 길이를 잰다.</small>
+                        </div>
+                        <div class="size-item">
+                            <h4>어깨넓이</h4>
+                            <p id="shoulderWidth"></p>
+                            <small>셔츠 단추를 모두 잠근 후 셔츠를 뒤집어 어깨 봉제선 양쪽 사이의 거리를 잰다.</small>
+                        </div>
+                        <div class="size-item">
+                            <h4>소매길이</h4>
+                            <p id="sleeveLength"></p>
+                            <small>어깨 봉제선에서 소매 끝부분까지 길이를 잰다.</small>
+                        </div>
+                        <div class="size-item">
+                            <h4>가슴둘레</h4>
+                            <p id="chestSize"></p>
+                            <small>셔츠를 최대한 평평하게 하고 겨드랑이 양쪽 끝부분 사이의 길이를 잰다.</small>
+                        </div>
+                        <div class="size-item">
+                            <h4>배둘레</h4>
+                            <p id="waistSize"></p>
+                            <small>셔츠가 가장 잘록하게 들어간 부위의 양쪽 끝부분 사이의 길이를 잰다. (끝에서 두번째 단추 위)</small>
+                        </div>
+                        <div class="size-item">
+                            <h4>기장</h4>
+                            <p id="shirtLength"></p>
+                            <small>셔츠를 뒤집어 카라 밑부분의 경계선부터 셔츠 밑단 끝까지 길이를 잰다.</small>
+                        </div>
+                    </div>
+                    <p class="note">고객님의 신체사이즈(키와 몸무게)를 기준으로 ChakChak AI가 맞춤셔츠를 할 때 필요한 사이즈를 추천드렸습니다. 좀더 정확한 사이즈는 착착 플랫폼을 통해 확인하세요.</p>
+                    <p class="slogan">Design to be desired !!</p>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h2>BMI 결과</h2>
+                <div id="bmiResult" class="bmi-result">
+                    <div class="bmi-score">
+                        <h3>BMI</h3>
+                        <p id="bmiScore"></p>
+                    </div>
+                    <div class="bmi-category">
+                        <h3>비만도</h3>
+                        <p id="bmiCategory"></p>
+                    </div>
+                </div>
+                <div id="bmiMessage" class="bmi-message"></div>
+                <div id="bmiImage" class="bmi-image"></div>
+            </div>
+
+            <div class="result-section">
+                <h2>이메일로 결과 받기</h2>
+                <form id="emailForm">
+                    <label for="email">이메일 주소:</label>
+                    <input type="email" id="email" required>
+                    <button type="submit">결과 보내기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="ai tailor_made_shirt.js"></script>
+</body>
+</html>
